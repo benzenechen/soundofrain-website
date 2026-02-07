@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#1a1f4d">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
     <title>Sound of Rain Association | 雨音音乐协会</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +16,6 @@
             --accent-magenta: #C73DFF;
             --text-light: #f2f2f2;
             --text-dark: #2A2264;
-            --overlay-dark: rgba(26, 31, 77, 0.85);
         }
 
         * {
@@ -28,16 +24,18 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-light);
-            overflow-x: hidden;
             background: #0a0a0a;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -62,8 +60,6 @@
 
         .logo {
             height: 50px;
-            opacity: 0;
-            animation: fadeInDown 0.8s ease-out forwards;
         }
 
         .nav-links {
@@ -76,83 +72,29 @@
             color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            opacity: 0;
-            animation: fadeInDown 0.8s ease-out forwards;
-        }
-
-        .nav-links li:nth-child(1) a { animation-delay: 0.1s; }
-        .nav-links li:nth-child(2) a { animation-delay: 0.2s; }
-        .nav-links li:nth-child(3) a { animation-delay: 0.3s; }
-        .nav-links li:nth-child(4) a { animation-delay: 0.4s; }
-        .nav-links li:nth-child(5) a { animation-delay: 0.5s; }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-cyan);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--accent-cyan);
         }
 
-        /* Mobile Menu */
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
-            cursor: pointer;
             gap: 6px;
-            z-index: 1001;
-            position: relative;
-            padding: 12px;
-            margin: -12px;
+            cursor: pointer;
+            padding: 8px;
         }
 
         .mobile-menu-toggle span {
-            width: 32px;
-            height: 4px;
+            width: 28px;
+            height: 3px;
             background: var(--text-light);
-            transition: all 0.3s ease;
             border-radius: 2px;
         }
 
-        @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: rgba(26, 31, 77, 0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                display: flex !important;
-            }
-
-            .mobile-menu-toggle {
-                display: flex !important;
-            }
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             position: relative;
             height: 100vh;
@@ -170,7 +112,6 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.5);
-            animation: slowZoom 20s ease-in-out infinite alternate;
         }
 
         .hero-gradient {
@@ -179,7 +120,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 31, 77, 0.7) 0%, rgba(107, 31, 110, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(26, 31, 77, 0.7), rgba(107, 31, 110, 0.7));
         }
 
         .hero-content {
@@ -191,31 +132,24 @@
         }
 
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
             letter-spacing: 2px;
         }
 
         .hero .chinese-name {
             font-family: 'Noto Serif SC', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
             color: var(--accent-cyan);
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
         }
 
         .hero-tagline {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 300;
             line-height: 1.8;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.7s forwards;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            margin-bottom: 2rem;
         }
 
         .cta-button {
@@ -226,21 +160,17 @@
             text-decoration: none;
             font-weight: 600;
             border-radius: 50px;
-            transition: all 0.4s ease;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.9s forwards;
+            transition: transform 0.3s;
             box-shadow: 0 10px 30px rgba(110, 245, 232, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(110, 245, 232, 0.5);
         }
 
-        /* Section Styles */
+        /* Sections */
         section {
-            padding: 6rem 2rem;
-            position: relative;
+            padding: 5rem 2rem;
         }
 
         .section-dark {
@@ -248,7 +178,7 @@
         }
 
         .section-light {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             color: var(--text-dark);
         }
 
@@ -258,13 +188,11 @@
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
             text-align: center;
+            margin-bottom: 1rem;
             position: relative;
-            display: inline-block;
-            width: 100%;
         }
 
         .section-title::after {
@@ -281,13 +209,13 @@
 
         .section-subtitle {
             font-family: 'Noto Serif SC', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             text-align: center;
             margin-bottom: 3rem;
             opacity: 0.9;
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -295,21 +223,11 @@
             align-items: center;
             margin-top: 3rem;
         }
-        
-        /* Force single column on phones regardless of reported width */
-        @media (max-width: 1024px), (max-device-width: 1024px) {
-            .about-content {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
 
         .about-text p {
             margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         .about-highlights {
@@ -323,21 +241,25 @@
             border-radius: 15px;
             border-left: 4px solid var(--accent-cyan);
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
         }
 
         .highlight-card:hover {
             transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .highlight-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--accent-cyan);
         }
 
-        /* Gallery Section */
+        .highlight-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -350,38 +272,20 @@
             overflow: hidden;
             border-radius: 15px;
             aspect-ratio: 4/3;
-            cursor: pointer;
-            transition: all 0.4s ease;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.4s ease;
+            transition: transform 0.4s;
         }
 
         .gallery-item:hover img {
             transform: scale(1.1);
         }
 
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(110, 245, 232, 0.3), rgba(199, 61, 255, 0.3));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* Get Involved Section */
+        /* Get Involved */
         .involved-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -394,7 +298,7 @@
             padding: 2.5rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: transform 0.4s, box-shadow 0.4s;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -409,7 +313,7 @@
         }
 
         .involved-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
@@ -419,19 +323,12 @@
             line-height: 1.6;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             margin-top: 3rem;
-        }
-        
-        /* Force single column on phones */
-        @media (max-width: 1024px), (max-device-width: 1024px) {
-            .contact-grid {
-                grid-template-columns: 1fr !important;
-            }
         }
 
         .contact-info {
@@ -447,7 +344,6 @@
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            backdrop-filter: blur(10px);
         }
 
         .contact-icon {
@@ -456,11 +352,11 @@
         }
 
         .contact-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.3rem;
             color: var(--text-dark);
         }
-        
+
         .contact-item p {
             color: var(--text-dark);
         }
@@ -468,7 +364,6 @@
         .contact-item a {
             color: var(--text-dark);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
@@ -486,24 +381,24 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: white;
             border-radius: 50px;
             text-decoration: none;
             color: var(--text-dark);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .social-link:hover {
-            background: rgba(110, 245, 232, 0.2);
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(110, 245, 232, 0.3);
         }
 
         .social-icon {
             font-size: 1.5rem;
         }
 
-        /* Support Section */
+        /* Support */
         .support-content {
             text-align: center;
             max-width: 700px;
@@ -511,11 +406,10 @@
             padding: 3rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
         }
 
         .support-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 2rem;
         }
@@ -529,13 +423,12 @@
             font-weight: 600;
             font-size: 1.1rem;
             border-radius: 50px;
-            transition: all 0.4s ease;
+            transition: transform 0.4s;
             box-shadow: 0 10px 30px rgba(199, 61, 255, 0.4);
         }
 
         .donate-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(199, 61, 255, 0.6);
         }
 
         /* Footer */
@@ -549,270 +442,115 @@
         footer p {
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slowZoom {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.05);
-            }
-        }
-
-        /* Force mobile layout via JavaScript detection */
-        html.force-mobile .about-content,
-        html.force-mobile .contact-grid {
-            grid-template-columns: 1fr !important;
-        }
-
-        html.force-mobile .gallery-grid {
-            grid-template-columns: 1fr !important;
-        }
-
-        html.force-mobile .involved-cards {
-            grid-template-columns: 1fr !important;
-        }
-
-        html.force-mobile .nav-links {
-            display: none !important;
-        }
-
-        html.force-mobile .mobile-menu-toggle {
-            display: flex !important;
-        }
-
-        html.force-mobile .social-links {
-            flex-direction: column !important;
-        }
-
-        /* Increase font sizes for mobile Chrome */
-        html.force-mobile body {
-            font-size: 22px;
-        }
-
-        html.force-mobile .hero h1 {
-            font-size: 3.5rem !important;
-        }
-
-        html.force-mobile .hero .chinese-name {
-            font-size: 2.2rem !important;
-        }
-
-        html.force-mobile .hero-tagline {
-            font-size: 1.5rem !important;
-        }
-
-        html.force-mobile .about-text {
-            font-size: 1.5rem !important;
-            line-height: 2 !important;
-        }
-
-        html.force-mobile .section-title {
-            font-size: 2.8rem !important;
-        }
-
-        html.force-mobile .section-subtitle {
-            font-size: 1.9rem !important;
-        }
-
-        html.force-mobile .involved-card p,
-        html.force-mobile .contact-item,
-        html.force-mobile .support-content p {
-            font-size: 1.4rem !important;
-            line-height: 2 !important;
-        }
-
-        html.force-mobile .highlight-card p {
-            font-size: 1.4rem !important;
-            line-height: 2 !important;
-        }
-
-        html.force-mobile .social-link {
-            font-size: 1.4rem !important;
-        }
-
-        /* Responsive */
+        /* Tablets and below - Show hamburger menu */
         @media (max-width: 1024px) {
-            body {
-                font-size: 22px;
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(26, 31, 77, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
             }
 
-            nav {
-                padding: 0.75rem 1rem;
+            .nav-links.active {
+                display: flex;
             }
 
-            .logo {
-                height: 50px;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-                line-height: 1.2;
-            }
-
-            .hero .chinese-name {
-                font-size: 2.2rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.5rem;
-                line-height: 1.7;
-            }
-
-            .cta-button {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.3rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2.8rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.9rem;
-            }
-
-            .about-text {
-                font-size: 1.5rem;
-                line-height: 2;
-            }
-
-            .about-text p {
-                margin-bottom: 1.8rem;
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Phones - Larger text for readability */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .chinese-name {
+                font-size: 1.6rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .about-text p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+            }
+
+            .highlight-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .highlight-card p {
+                font-size: 1.05rem;
+            }
+
+            .involved-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .involved-card p {
+                font-size: 1.05rem;
+            }
+
+            .contact-item {
+                font-size: 1.05rem;
+            }
+
+            .social-link {
+                font-size: 1.05rem;
+            }
+
+            .support-content p {
+                font-size: 1.15rem;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .involved-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .involved-card h3 {
-                font-size: 1.9rem;
-            }
-
-            .involved-card p {
-                font-size: 1.4rem;
-                line-height: 2;
-            }
-
-            .highlight-card h3 {
-                font-size: 1.7rem;
-            }
-
-            .highlight-card p {
-                font-size: 1.4rem;
-                line-height: 2;
-            }
-
-            .social-links {
-                flex-direction: column;
-            }
-
-            .social-link {
-                justify-content: center;
-                font-size: 1.4rem;
-                padding: 1.5rem 2rem;
-            }
-
-            .donate-button {
-                padding: 1.4rem 3rem;
-                font-size: 1.5rem;
-            }
-
-            .support-content {
-                padding: 2.5rem 2rem;
-            }
-
-            .support-content p {
-                font-size: 1.5rem;
-                line-height: 2;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-                font-size: 1.4rem;
-            }
-
-            .contact-item h3 {
-                font-size: 1.7rem;
-            }
-
-            .contact-item a,
-            .contact-item p {
-                font-size: 1.3rem;
-            }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .chinese-name {
-                font-size: 1.3rem;
-            }
-
-            .hero-tagline {
-                font-size: 0.9rem;
             }
 
             section {
-                padding: 3rem 1rem;
+                padding: 4rem 1.5rem;
             }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -820,7 +558,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <img src="logo-dark.svg" alt="Sound of Rain Logo" class="logo" id="nav-logo">
+            <img src="logo-dark.svg" alt="Sound of Rain Logo" class="logo">
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
@@ -836,19 +574,19 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <img src="IMG_3382.jpg" alt="Sound of Rain Performance" class="hero-bg">
         <div class="hero-gradient"></div>
         <div class="hero-content">
             <h1>Sound of Rain</h1>
             <p class="chinese-name">雨音音乐协会</p>
-            <p class="hero-tagline">A nonprofit music organization promoting Chinese-American cultural exchange through live performances and community engagement in the Seattle area.</p>
+            <p class="hero-tagline">A 501(c)(3) nonprofit music organization promoting Chinese-American cultural exchange through live performances and community engagement in the Seattle area.</p>
             <a href="#about" class="cta-button">Discover Our Music</a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section-dark">
         <div class="container">
             <h2 class="section-title">About Us</h2>
@@ -877,53 +615,29 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery -->
     <section id="gallery" class="section-light">
         <div class="container">
             <h2 class="section-title">Gallery</h2>
             <p class="section-subtitle">演出回顾</p>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="IMG_3382.jpg" alt="Full band performance">
-                </div>
-                <div class="gallery-item">
-                    <img src="IMG_3376.jpg" alt="Band on stage">
-                </div>
-                <div class="gallery-item">
-                    <img src="P1010096.JPG" alt="Band members performing">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_8344.JPG" alt="Vocal performance">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_8313.JPG" alt="Band trio">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_8316.JPG" alt="Bass and drums">
-                </div>
-                <div class="gallery-item">
-                    <img src="DSC09951.jpg" alt="Lead vocalist">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_5060.jpg" alt="Female vocalist">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_5132.jpg" alt="Bassist performance">
-                </div>
-                <div class="gallery-item">
-                    <img src="DSC09948.jpg" alt="Keyboard performance">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_5121.jpg" alt="Drummer">
-                </div>
-                <div class="gallery-item">
-                    <img src="DZ8_5179.jpg" alt="Electric guitarist">
-                </div>
+                <div class="gallery-item"><img src="IMG_3382.jpg" alt="Full band performance"></div>
+                <div class="gallery-item"><img src="IMG_3376.jpg" alt="Band on stage"></div>
+                <div class="gallery-item"><img src="P1010096.JPG" alt="Band members performing"></div>
+                <div class="gallery-item"><img src="DZ8_8344.JPG" alt="Vocal performance"></div>
+                <div class="gallery-item"><img src="DZ8_8313.JPG" alt="Band trio"></div>
+                <div class="gallery-item"><img src="DZ8_8316.JPG" alt="Bass and drums"></div>
+                <div class="gallery-item"><img src="DSC09951.jpg" alt="Lead vocalist"></div>
+                <div class="gallery-item"><img src="DZ8_5060.jpg" alt="Female vocalist"></div>
+                <div class="gallery-item"><img src="DZ8_5132.jpg" alt="Bassist performance"></div>
+                <div class="gallery-item"><img src="DSC09948.jpg" alt="Keyboard performance"></div>
+                <div class="gallery-item"><img src="DZ8_5121.jpg" alt="Drummer"></div>
+                <div class="gallery-item"><img src="DZ8_5179.jpg" alt="Electric guitarist"></div>
             </div>
         </div>
     </section>
 
-    <!-- Get Involved Section -->
+    <!-- Get Involved -->
     <section id="get-involved" class="section-dark">
         <div class="container">
             <h2 class="section-title">Get Involved</h2>
@@ -948,7 +662,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="section-light">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
@@ -959,7 +673,7 @@
                         <div class="contact-icon">📧</div>
                         <div>
                             <h3>Email</h3>
-                            <a href="/cdn-cgi/l/email-protection#295a465c474d464f5b484047485a5a464a40485d404647694e44484045074a4644"><span class="__cf_email__" data-cfemail="75061a001b111a1307141c1b1406061a161c14011c1a1b351218141c195b161a18">[email&#160;protected]</span></a>
+                            <a href="mailto:soundofrainassociation@gmail.com">soundofrainassociation@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -971,26 +685,25 @@
                     </div>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Follow Us</h3>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; color: var(--text-dark);">Follow Us</h3>
                     <div class="social-links">
                         <a href="https://xhslink.com/m/1cbk67SFYs9" target="_blank" class="social-link">
-                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FF2442"/>
                                 <path d="M20 10C14.477 10 10 14.477 10 20C10 25.523 14.477 30 20 30C25.523 30 30 25.523 30 20C30 14.477 25.523 10 20 10ZM23.5 16.5C24.328 16.5 25 17.172 25 18C25 18.828 24.328 19.5 23.5 19.5C22.672 19.5 22 18.828 22 18C22 17.172 22.672 16.5 23.5 16.5ZM16.5 16.5C17.328 16.5 18 17.172 18 18C18 18.828 17.328 19.5 16.5 19.5C15.672 19.5 15 18.828 15 18C15 17.172 15.672 16.5 16.5 16.5ZM20 24C17.239 24 15 22.209 15 20H16.5C16.5 21.381 18.067 22.5 20 22.5C21.933 22.5 23.5 21.381 23.5 20H25C25 22.209 22.761 24 20 24Z" fill="white"/>
                             </svg>
                             <span>Xiaohongshu (小红书)</span>
                         </a>
                         <a href="https://www.instagram.com/soundofrain_official" target="_blank" class="social-link">
-                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                 <defs>
-                                    <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#FED576;stop-opacity:1" />
-                                        <stop offset="25%" style="stop-color:#F47133;stop-opacity:1" />
-                                        <stop offset="50%" style="stop-color:#BC3081;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#4C63D2;stop-opacity:1" />
+                                    <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#FED576"/>
+                                        <stop offset="50%" style="stop-color:#F47133"/>
+                                        <stop offset="100%" style="stop-color:#BC3081"/>
                                     </linearGradient>
                                 </defs>
-                                <rect width="40" height="40" rx="8" fill="url(#instagram-gradient)"/>
+                                <rect width="40" height="40" rx="8" fill="url(#ig-gradient)"/>
                                 <path d="M20 13C16.741 13 16.333 13.014 15.053 13.072C13.775 13.131 12.903 13.333 12.14 13.63C11.351 13.937 10.681 14.347 10.014 15.014C9.347 15.681 8.937 16.351 8.63 17.14C8.333 17.903 8.131 18.775 8.072 20.053C8.014 21.333 8 21.741 8 25C8 28.259 8.014 28.667 8.072 29.947C8.131 31.225 8.333 32.097 8.63 32.86C8.937 33.649 9.347 34.319 10.014 34.986C10.681 35.653 11.351 36.063 12.14 36.37C12.903 36.667 13.775 36.869 15.053 36.928C16.333 36.986 16.741 37 20 37C23.259 37 23.667 36.986 24.947 36.928C26.225 36.869 27.097 36.667 27.86 36.37C28.649 36.063 29.319 35.653 29.986 34.986C30.653 34.319 31.063 33.649 31.37 32.86C31.667 32.097 31.869 31.225 31.928 29.947C31.986 28.667 32 28.259 32 25C32 21.741 31.986 21.333 31.928 20.053C31.869 18.775 31.667 17.903 31.37 17.14C31.063 16.351 30.653 15.681 29.986 15.014C29.319 14.347 28.649 13.937 27.86 13.63C27.097 13.333 26.225 13.131 24.947 13.072C23.667 13.014 23.259 13 20 13ZM20 15.081C23.203 15.081 23.585 15.092 24.849 15.15C26.019 15.204 26.655 15.4 27.077 15.563C27.639 15.781 28.037 16.042 28.459 16.464C28.881 16.886 29.142 17.284 29.36 17.846C29.523 18.268 29.719 18.904 29.773 20.074C29.831 21.338 29.842 21.72 29.842 24.923C29.842 28.126 29.831 28.508 29.773 29.772C29.719 30.942 29.523 31.578 29.36 32C29.142 32.562 28.881 32.96 28.459 33.382C28.037 33.804 27.639 34.065 27.077 34.283C26.655 34.446 26.019 34.642 24.849 34.696C23.585 34.754 23.203 34.765 20 34.765C16.797 34.765 16.415 34.754 15.151 34.696C13.981 34.642 13.345 34.446 12.923 34.283C12.361 34.065 11.963 33.804 11.541 33.382C11.119 32.96 10.858 32.562 10.64 32C10.477 31.578 10.281 30.942 10.227 29.772C10.169 28.508 10.158 28.126 10.158 24.923C10.158 21.72 10.169 21.338 10.227 20.074C10.281 18.904 10.477 18.268 10.64 17.846C10.858 17.284 11.119 16.886 11.541 16.464C11.963 16.042 12.361 15.781 12.923 15.563C13.345 15.4 13.981 15.204 15.151 15.15C16.415 15.092 16.797 15.081 20 15.081Z" fill="white"/>
                                 <path d="M20 22.432C18.311 22.432 16.939 23.804 16.939 25.493C16.939 27.182 18.311 28.554 20 28.554C21.689 28.554 23.061 27.182 23.061 25.493C23.061 23.804 21.689 22.432 20 22.432ZM20 26.473C19.461 26.473 19.02 26.032 19.02 25.493C19.02 24.954 19.461 24.513 20 24.513C20.539 24.513 20.98 24.954 20.98 25.493C20.98 26.032 20.539 26.473 20 26.473Z" fill="white"/>
                                 <circle cx="23.27" cy="22.203" r="0.811" fill="white"/>
@@ -1003,14 +716,14 @@
         </div>
     </section>
 
-    <!-- Support Section -->
+    <!-- Support -->
     <section id="support" class="section-dark">
         <div class="container">
             <h2 class="section-title">Support Us</h2>
             <p class="section-subtitle">支持我们</p>
             <div class="support-content">
                 <p>Your support helps us continue our mission of promoting Chinese-American cultural exchange through music. Every donation enables us to organize performances, support our musicians, and bring communities together.</p>
-                <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 2rem;">Sound of Rain Association is a 501(c)(3) nonprofit organization. Your contributions are tax-deductible to the extent allowed by law.</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 2rem;">Sound of Rain Association is a 501(c)(3) nonprofit organization. Your contributions are tax-deductible to the extent allowed by law.</p>
                 <a href="https://www.zeffy.com/en-US/donation-form/donate-to-support-chinese-music" target="_blank" class="donate-button">Make a Donation</a>
             </div>
         </div>
@@ -1023,43 +736,31 @@
     </footer>
 
     <script>
-        // Force mobile detection for Chrome on phones
-        function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
-                || window.innerWidth <= 1024;
-        }
-
-        if (isMobileDevice()) {
-            document.documentElement.classList.add('force-mobile');
-        }
-
         // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const toggle = document.getElementById('mobile-menu-toggle');
         const navLinks = document.getElementById('nav-links');
 
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
             });
         }
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-
-        // Smooth scroll offset for fixed nav
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: target.offsetTop - 70,
                         behavior: 'smooth'
                     });
                 }
