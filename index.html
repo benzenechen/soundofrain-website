@@ -391,16 +391,21 @@
         .contact-item h3 {
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-item p {
+            color: var(--text-dark);
         }
 
         .contact-item a {
-            color: var(--text-light);
+            color: var(--text-dark);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: var(--accent-cyan);
+            color: var(--accent-purple);
         }
 
         .social-links {
@@ -417,7 +422,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             text-decoration: none;
-            color: var(--text-light);
+            color: var(--text-dark);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
@@ -558,7 +563,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <img src="logo-light.svg" alt="Sound of Rain Logo" class="logo" id="nav-logo">
+            <img src="logo-dark.svg" alt="Sound of Rain Logo" class="logo" id="nav-logo">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -588,7 +593,7 @@
             <p class="section-subtitle">关于我们</p>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Sound of Rain Association is a nonprofit music organization based in the Seattle area, dedicated to promoting Chinese-American cultural exchange through live music, performances, and community engagement.</p>
+                    <p>Sound of Rain Association is a 501(c)(3) nonprofit music organization based in the Seattle area, dedicated to promoting Chinese-American cultural exchange through live music, performances, and community engagement.</p>
                     <p>Through contemporary Chinese pop, rock, and crossover music, we aim to connect cultures, bring communities together, and create meaningful musical experiences.</p>
                     <p>Our performing band, Sound of Rain (雨音乐队), typically features 5-7 core members including vocals, electric/acoustic guitar, keyboard, bass, and drums. Beyond our core ensemble, we function as a broader music association featuring rotating musicians, guest performers, and small ensembles for community events.</p>
                 </div>
@@ -692,7 +697,7 @@
                         <div class="contact-icon">📧</div>
                         <div>
                             <h3>Email</h3>
-                            <a href="/cdn-cgi/l/email-protection#6a19051f040e050c180b03040b19190509030b1e0305042a0d070b030644090507"><span class="__cf_email__" data-cfemail="98ebf7edf6fcf7feeaf9f1f6f9ebebf7fbf1f9ecf1f7f6d8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a>
+                            <a href="/cdn-cgi/l/email-protection#295a465c474d464f5b484047485a5a464a40485d404647694e44484045074a4644"><span class="__cf_email__" data-cfemail="75061a001b111a1307141c1b1406061a161c14011c1a1b351218141c195b161a18">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -707,21 +712,29 @@
                     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Follow Us</h3>
                     <div class="social-links">
                         <a href="https://xhslink.com/m/1cbk67SFYs9" target="_blank" class="social-link">
-                            <span class="social-icon">📱</span>
+                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="8" fill="#FF2442"/>
+                                <path d="M20 10C14.477 10 10 14.477 10 20C10 25.523 14.477 30 20 30C25.523 30 30 25.523 30 20C30 14.477 25.523 10 20 10ZM23.5 16.5C24.328 16.5 25 17.172 25 18C25 18.828 24.328 19.5 23.5 19.5C22.672 19.5 22 18.828 22 18C22 17.172 22.672 16.5 23.5 16.5ZM16.5 16.5C17.328 16.5 18 17.172 18 18C18 18.828 17.328 19.5 16.5 19.5C15.672 19.5 15 18.828 15 18C15 17.172 15.672 16.5 16.5 16.5ZM20 24C17.239 24 15 22.209 15 20H16.5C16.5 21.381 18.067 22.5 20 22.5C21.933 22.5 23.5 21.381 23.5 20H25C25 22.209 22.761 24 20 24Z" fill="white"/>
+                            </svg>
                             <span>Xiaohongshu (小红书)</span>
                         </a>
                         <a href="https://www.instagram.com/soundofrain_official" target="_blank" class="social-link">
-                            <span class="social-icon">📷</span>
+                            <svg class="social-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#FED576;stop-opacity:1" />
+                                        <stop offset="25%" style="stop-color:#F47133;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#BC3081;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#4C63D2;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="40" height="40" rx="8" fill="url(#instagram-gradient)"/>
+                                <path d="M20 13C16.741 13 16.333 13.014 15.053 13.072C13.775 13.131 12.903 13.333 12.14 13.63C11.351 13.937 10.681 14.347 10.014 15.014C9.347 15.681 8.937 16.351 8.63 17.14C8.333 17.903 8.131 18.775 8.072 20.053C8.014 21.333 8 21.741 8 25C8 28.259 8.014 28.667 8.072 29.947C8.131 31.225 8.333 32.097 8.63 32.86C8.937 33.649 9.347 34.319 10.014 34.986C10.681 35.653 11.351 36.063 12.14 36.37C12.903 36.667 13.775 36.869 15.053 36.928C16.333 36.986 16.741 37 20 37C23.259 37 23.667 36.986 24.947 36.928C26.225 36.869 27.097 36.667 27.86 36.37C28.649 36.063 29.319 35.653 29.986 34.986C30.653 34.319 31.063 33.649 31.37 32.86C31.667 32.097 31.869 31.225 31.928 29.947C31.986 28.667 32 28.259 32 25C32 21.741 31.986 21.333 31.928 20.053C31.869 18.775 31.667 17.903 31.37 17.14C31.063 16.351 30.653 15.681 29.986 15.014C29.319 14.347 28.649 13.937 27.86 13.63C27.097 13.333 26.225 13.131 24.947 13.072C23.667 13.014 23.259 13 20 13ZM20 15.081C23.203 15.081 23.585 15.092 24.849 15.15C26.019 15.204 26.655 15.4 27.077 15.563C27.639 15.781 28.037 16.042 28.459 16.464C28.881 16.886 29.142 17.284 29.36 17.846C29.523 18.268 29.719 18.904 29.773 20.074C29.831 21.338 29.842 21.72 29.842 24.923C29.842 28.126 29.831 28.508 29.773 29.772C29.719 30.942 29.523 31.578 29.36 32C29.142 32.562 28.881 32.96 28.459 33.382C28.037 33.804 27.639 34.065 27.077 34.283C26.655 34.446 26.019 34.642 24.849 34.696C23.585 34.754 23.203 34.765 20 34.765C16.797 34.765 16.415 34.754 15.151 34.696C13.981 34.642 13.345 34.446 12.923 34.283C12.361 34.065 11.963 33.804 11.541 33.382C11.119 32.96 10.858 32.562 10.64 32C10.477 31.578 10.281 30.942 10.227 29.772C10.169 28.508 10.158 28.126 10.158 24.923C10.158 21.72 10.169 21.338 10.227 20.074C10.281 18.904 10.477 18.268 10.64 17.846C10.858 17.284 11.119 16.886 11.541 16.464C11.963 16.042 12.361 15.781 12.923 15.563C13.345 15.4 13.981 15.204 15.151 15.15C16.415 15.092 16.797 15.081 20 15.081Z" fill="white"/>
+                                <path d="M20 22.432C18.311 22.432 16.939 23.804 16.939 25.493C16.939 27.182 18.311 28.554 20 28.554C21.689 28.554 23.061 27.182 23.061 25.493C23.061 23.804 21.689 22.432 20 22.432ZM20 26.473C19.461 26.473 19.02 26.032 19.02 25.493C19.02 24.954 19.461 24.513 20 24.513C20.539 24.513 20.98 24.954 20.98 25.493C20.98 26.032 20.539 26.473 20 26.473Z" fill="white"/>
+                                <circle cx="23.27" cy="22.203" r="0.811" fill="white"/>
+                            </svg>
                             <span>Instagram</span>
                         </a>
-                        <div class="social-link" style="opacity: 0.5; cursor: not-allowed;">
-                            <span class="social-icon">🎬</span>
-                            <span>YouTube (Coming Soon)</span>
-                        </div>
-                        <div class="social-link" style="opacity: 0.5; cursor: not-allowed;">
-                            <span class="social-icon">👥</span>
-                            <span>Facebook (Coming Soon)</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -735,6 +748,7 @@
             <p class="section-subtitle">支持我们</p>
             <div class="support-content">
                 <p>Your support helps us continue our mission of promoting Chinese-American cultural exchange through music. Every donation enables us to organize performances, support our musicians, and bring communities together.</p>
+                <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 2rem;">Sound of Rain Association is a 501(c)(3) nonprofit organization. Your contributions are tax-deductible to the extent allowed by law.</p>
                 <a href="https://www.zeffy.com/en-US/donation-form/donate-to-support-chinese-music" target="_blank" class="donate-button">Make a Donation</a>
             </div>
         </div>
@@ -742,7 +756,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Sound of Rain Association (雨音音乐协会). All rights reserved.</p>
+        <p>Sound of Rain Association (雨音音乐协会) is a 501(c)(3) nonprofit organization.</p>
+        <p>&copy; 2025 Sound of Rain Association. All rights reserved.</p>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
