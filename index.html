@@ -449,8 +449,9 @@
            RESPONSIVE DESIGN
            ======================================== */
 
-        /* Tablets and below - Show hamburger menu */
+        /* Tablets and Phones - Responsive layout and larger fonts */
         @media (max-width: 1024px) {
+            /* Layout changes */
             .nav-links {
                 display: none;
                 position: absolute;
@@ -477,14 +478,12 @@
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: 1fr;
             }
-        }
 
-        /* Phones - Larger text for readability */
-        @media (max-width: 768px) {
+            /* Font size increases for readability */
             body {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             nav {
@@ -492,56 +491,59 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero .chinese-name {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .hero-tagline {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
 
             .section-subtitle {
-                font-size: 1.3rem;
-            }
-
-            .about-text p {
-                font-size: 1.1rem;
-                line-height: 1.9;
-            }
-
-            .highlight-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .highlight-card p {
-                font-size: 1.05rem;
-            }
-
-            .involved-card h3 {
                 font-size: 1.5rem;
             }
 
+            .about-text p {
+                font-size: 1.2rem;
+                line-height: 2;
+            }
+
+            .highlight-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .highlight-card p {
+                font-size: 1.15rem;
+                line-height: 1.9;
+            }
+
+            .involved-card h3 {
+                font-size: 1.6rem;
+            }
+
             .involved-card p {
-                font-size: 1.05rem;
+                font-size: 1.15rem;
+                line-height: 1.9;
             }
 
             .contact-item {
-                font-size: 1.05rem;
+                font-size: 1.15rem;
             }
 
             .social-link {
-                font-size: 1.05rem;
+                font-size: 1.15rem;
             }
 
             .support-content p {
-                font-size: 1.15rem;
+                font-size: 1.25rem;
+                line-height: 2;
             }
 
             .gallery-grid {
@@ -673,7 +675,7 @@
                         <div class="contact-icon">📧</div>
                         <div>
                             <h3>Email</h3>
-                            <a href="mailto:soundofrainassociation@gmail.com">soundofrainassociation@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#22514d574c464d4450434b4c4351514d414b43564b4d4c62454f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="0b78647e656f646d796a62656a78786468626a7f6264654b6c666a626725686466">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -735,7 +737,7 @@
         <p>&copy; 2025 Sound of Rain Association. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile menu toggle
         const toggle = document.getElementById('mobile-menu-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -757,15 +759,4 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                const target = document.querySelector(this.getAttribute('hre
