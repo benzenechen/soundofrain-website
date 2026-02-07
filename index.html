@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#1a1f4d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Sound of Rain Association | 雨音音乐协会</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -283,6 +286,13 @@
             align-items: center;
             margin-top: 3rem;
         }
+        
+        /* Force single column on phones regardless of reported width */
+        @media (max-width: 1024px), (max-device-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr !important;
+            }
+        }
 
         .about-text {
             font-size: 1.1rem;
@@ -406,6 +416,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             margin-top: 3rem;
+        }
+        
+        /* Force single column on phones */
+        @media (max-width: 1024px), (max-device-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         .contact-info {
@@ -555,6 +572,32 @@
             to {
                 transform: scale(1.05);
             }
+        }
+
+        /* Force mobile layout via JavaScript detection */
+        html.force-mobile .about-content,
+        html.force-mobile .contact-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        html.force-mobile .gallery-grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        html.force-mobile .involved-cards {
+            grid-template-columns: 1fr !important;
+        }
+
+        html.force-mobile .nav-links {
+            display: none !important;
+        }
+
+        html.force-mobile .mobile-menu-toggle {
+            display: flex !important;
+        }
+
+        html.force-mobile .social-links {
+            flex-direction: column !important;
         }
 
         /* Responsive */
@@ -877,6 +920,16 @@
     </footer>
 
     <script>
+        // Force mobile detection for Chrome on phones
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                || window.innerWidth <= 1024;
+        }
+
+        if (isMobileDevice()) {
+            document.documentElement.classList.add('force-mobile');
+        }
+
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const navLinks = document.getElementById('nav-links');
