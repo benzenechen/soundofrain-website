@@ -35,6 +35,9 @@
             background: #0a0a0a;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         /* Navigation */
@@ -600,8 +603,47 @@
             flex-direction: column !important;
         }
 
+        /* Increase font sizes for mobile Chrome */
+        html.force-mobile body {
+            font-size: 18px;
+        }
+
+        html.force-mobile .hero h1 {
+            font-size: 2.8rem !important;
+        }
+
+        html.force-mobile .hero .chinese-name {
+            font-size: 1.8rem !important;
+        }
+
+        html.force-mobile .hero-tagline {
+            font-size: 1.15rem !important;
+        }
+
+        html.force-mobile .about-text {
+            font-size: 1.15rem !important;
+        }
+
+        html.force-mobile .section-title {
+            font-size: 2.2rem !important;
+        }
+
+        html.force-mobile .section-subtitle {
+            font-size: 1.5rem !important;
+        }
+
+        html.force-mobile .involved-card p,
+        html.force-mobile .contact-item,
+        html.force-mobile .support-content p {
+            font-size: 1.1rem !important;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
+            body {
+                font-size: 17px;
+            }
+
             nav {
                 padding: 0.75rem 1rem;
             }
@@ -611,22 +653,22 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
                 line-height: 1.2;
             }
 
             .hero .chinese-name {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .hero-tagline {
-                font-size: 1rem;
+                font-size: 1.15rem;
                 line-height: 1.6;
             }
 
             .cta-button {
                 padding: 0.9rem 2rem;
-                font-size: 0.95rem;
+                font-size: 1.05rem;
             }
 
             section {
@@ -634,11 +676,15 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .section-subtitle {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
+            }
+
+            .about-text {
+                font-size: 1.15rem;
             }
 
             .about-content,
@@ -656,27 +702,37 @@
                 grid-template-columns: 1fr;
             }
 
+            .involved-card p {
+                font-size: 1.05rem;
+            }
+
             .social-links {
                 flex-direction: column;
             }
 
             .social-link {
                 justify-content: center;
+                font-size: 1.05rem;
             }
 
             .donate-button {
                 padding: 1rem 2rem;
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .support-content {
                 padding: 2rem 1.5rem;
             }
 
+            .support-content p {
+                font-size: 1.15rem;
+            }
+
             .contact-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
+                font-size: 1.05rem;
             }
         }
 
