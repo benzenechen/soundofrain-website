@@ -605,43 +605,49 @@
 
         /* Increase font sizes for mobile Chrome */
         html.force-mobile body {
-            font-size: 18px;
+            font-size: 19px;
         }
 
         html.force-mobile .hero h1 {
-            font-size: 2.8rem !important;
+            font-size: 3.2rem !important;
         }
 
         html.force-mobile .hero .chinese-name {
-            font-size: 1.8rem !important;
+            font-size: 2rem !important;
         }
 
         html.force-mobile .hero-tagline {
-            font-size: 1.15rem !important;
+            font-size: 1.3rem !important;
         }
 
         html.force-mobile .about-text {
-            font-size: 1.15rem !important;
+            font-size: 1.25rem !important;
+            line-height: 1.8 !important;
         }
 
         html.force-mobile .section-title {
-            font-size: 2.2rem !important;
+            font-size: 2.5rem !important;
         }
 
         html.force-mobile .section-subtitle {
-            font-size: 1.5rem !important;
+            font-size: 1.7rem !important;
         }
 
         html.force-mobile .involved-card p,
         html.force-mobile .contact-item,
         html.force-mobile .support-content p {
-            font-size: 1.1rem !important;
+            font-size: 1.2rem !important;
+            line-height: 1.8 !important;
+        }
+
+        html.force-mobile .highlight-card p {
+            font-size: 1.15rem !important;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             body {
-                font-size: 17px;
+                font-size: 19px;
             }
 
             nav {
@@ -649,26 +655,26 @@
             }
 
             .logo {
-                height: 40px;
+                height: 45px;
             }
 
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
                 line-height: 1.2;
             }
 
             .hero .chinese-name {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .hero-tagline {
-                font-size: 1.15rem;
+                font-size: 1.3rem;
                 line-height: 1.6;
             }
 
             .cta-button {
-                padding: 0.9rem 2rem;
-                font-size: 1.05rem;
+                padding: 1rem 2.2rem;
+                font-size: 1.15rem;
             }
 
             section {
@@ -676,15 +682,16 @@
             }
 
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .section-subtitle {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
 
             .about-text {
-                font-size: 1.15rem;
+                font-size: 1.25rem;
+                line-height: 1.8;
             }
 
             .about-content,
@@ -702,8 +709,22 @@
                 grid-template-columns: 1fr;
             }
 
+            .involved-card h3 {
+                font-size: 1.7rem;
+            }
+
             .involved-card p {
-                font-size: 1.05rem;
+                font-size: 1.15rem;
+                line-height: 1.7;
+            }
+
+            .highlight-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .highlight-card p {
+                font-size: 1.1rem;
+                line-height: 1.7;
             }
 
             .social-links {
@@ -712,12 +733,13 @@
 
             .social-link {
                 justify-content: center;
-                font-size: 1.05rem;
+                font-size: 1.15rem;
+                padding: 1.2rem 1.5rem;
             }
 
             .donate-button {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
+                padding: 1.1rem 2.5rem;
+                font-size: 1.2rem;
             }
 
             .support-content {
@@ -725,14 +747,19 @@
             }
 
             .support-content p {
-                font-size: 1.15rem;
+                font-size: 1.25rem;
+                line-height: 1.8;
             }
 
             .contact-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
-                font-size: 1.05rem;
+                font-size: 1.15rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1.4rem;
             }
         }
 
